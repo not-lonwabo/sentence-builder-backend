@@ -15,7 +15,13 @@ mongoose.connect(uri);
 const connection = mongoose.connection;
 connection.once('open', () => {
     console.log('MongoDB database connection established');
-})
+});
+
+const sentencesRouter = require('./routes/sentences');
+const wordsRouter = require('./routes/words');
+
+app.use('/sentences', sentencesRouter);
+app.use('/words', wordsRouter);
 
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`);
