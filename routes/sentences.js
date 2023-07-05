@@ -10,7 +10,7 @@ router.route('/').get((req, res) => {
 router.route('/submit').post((req, res) => {
     const sentence = req.body.sentence;
 
-    const newSentence = new Sentence({sentence});
+    const newSentence = new Sentences({sentence});
 
     newSentence.save()
         .then(() => res.json('Sentence added!'))
