@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const apicache = require('apicache');
 const mongoose = require('mongoose');
+const { swaggerDocs: V1SwaggerDocs } = require("./swagger");
 
 require('dotenv').config();
 
@@ -27,4 +28,5 @@ app.use('/words', cache("2 minutes"), wordsRouter);
 
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`);
+    V1SwaggerDocs(app, port);
 });
