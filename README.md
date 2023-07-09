@@ -6,7 +6,8 @@ In the project directory, you should run:
 
 ### `npm install`
 
-This install all the necessary dependencies for you to be able to run the app.
+This will install all the necessary dependencies for you to be able to run the app.
+Once this completes run:
 
 ### `node server`
 
